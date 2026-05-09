@@ -185,6 +185,10 @@ cards.forEach(card => {
     setTimeout(() => {
 
       result.classList.remove("hidden");
+
+      shareBtn.classList.remove("hidden");
+      retryBtn.classList.remove("hidden");
+
       linesEl.innerHTML = "";
 
       todayWord.lines.forEach(([letter, text], i) => {
@@ -206,6 +210,7 @@ cards.forEach(card => {
 });
 
 const shareBtn = document.getElementById("shareBtn");
+const retryBtn = document.getElementById("retryBtn");
 
 shareBtn.addEventListener("click", async () => {
 
@@ -213,6 +218,9 @@ shareBtn.addEventListener("click", async () => {
 
   shareBtn.style.opacity = "0";
   shareBtn.style.pointerEvents = "none";
+
+  retryBtn.style.opacity = "0";
+  retryBtn.style.pointerEvents = "none";
 
   await new Promise(resolve => setTimeout(resolve, 100));
 
@@ -225,6 +233,9 @@ shareBtn.addEventListener("click", async () => {
 
   shareBtn.style.opacity = "1";
   shareBtn.style.pointerEvents = "auto";
+
+  retryBtn.style.opacity = "1";
+  retryBtn.style.pointerEvents = "auto";
 
   const dataUrl = canvas.toDataURL("image/png");
 
@@ -265,5 +276,11 @@ shareBtn.addEventListener("click", async () => {
   link.click();
 
   document.body.removeChild(link);
+
+});
+
+retryBtn.addEventListener("click", () => {
+
+  location.reload();
 
 });
