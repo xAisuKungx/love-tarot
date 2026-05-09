@@ -252,16 +252,37 @@ shareBtn.addEventListener("click", async () => {
       { type:"image/png" }
     );
 
-    if(navigator.canShare && navigator.canShare({ files:[file] })){
+    try{
 
-      await navigator.share({
-        files:[file],
-        title:"Love Tarot",
-        text:"My Love Card Tonight ✨"
-      });
+      if(navigator.share){
 
-      return;
+        await navigator.share({
+          files:[file],
+          title:"Love Tarot",
+          text:"My Love Card Tonight ✨"
+        });
+
+        return;
+      }
+
+    }catch(err){
+
+      console.log(err);
+
     }
+
+    // ===== fallback โหลดรูป =====
+    const link = document.createElement("a");
+
+    link.href = dataUrl;
+
+    link.download = "love-tarot.png";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
   }
 
   // ===== PC โหลดไฟล์เลย =====
