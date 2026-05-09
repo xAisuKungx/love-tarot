@@ -14,7 +14,8 @@ body{
 
   min-height:100vh;
 
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto;
 
   display:flex;
   justify-content:center;
@@ -50,6 +51,7 @@ body{
   max-width:1200px;
 
   padding-top:60px;
+  padding-bottom:120px;
 
   display:flex;
   flex-direction:column;
@@ -146,7 +148,8 @@ body{
 
   border:1px solid rgba(255,255,255,.15);
 
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto;
 }
 
 .card-front{
@@ -171,8 +174,49 @@ body{
 }
 
 .card-title{
-  font-size:1.5rem;
-  line-height:1.4;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  width:100%;
+
+  height:100%;
+
+  padding:0 10px;
+
+  text-align:center;
+
+  line-height:1.1;
+
+}
+
+.the-word{
+
+  font-size:0.8rem;
+
+  letter-spacing:2px;
+
+  margin-bottom:6px;
+
+}
+
+.main-word{
+
+  display:block;
+
+  width:100%;
+
+  min-width:100%;
+
+  font-weight:bold;
+
+  white-space:nowrap;
+
 }
 
 /* ===================== */
@@ -407,4 +451,47 @@ body{
 
 .share-btn:hover{
   transform:scale(1.05);
+}
+
+.force-capture .line{
+
+  opacity:1 !important;
+
+  animation:none !important;
+
+  transform:none !important;
+
+  color:#fff !important;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,.35);
+
+}
+
+.capture-mode *{
+
+  animation:none !important;
+
+  transition:none !important;
+
+}
+
+.capture-mode .line{
+
+  animation:none !important;
+
+  transition:none !important;
+
+  opacity:1 !important;
+
+  transform:none !important;
+
+}
+
+.capture-mode .result{
+
+  animation:none !important;
+
+  opacity:1 !important;
+
 }
