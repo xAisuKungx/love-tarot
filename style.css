@@ -507,3 +507,31 @@ body{
   opacity:1 !important;
 
 }
+
+.retry-btn{
+
+  margin-top:12px;
+
+  padding:12px 22px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:
+    linear-gradient(135deg,#6ba8ff,#7bffcb);
+
+  color:white;
+
+  font-size:1rem;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+.retry-btn:hover{
+  transform:scale(1.05);
+}
